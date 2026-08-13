@@ -9,8 +9,7 @@ import { createAdapterFiles } from "../onix-config-templates/create-adapter.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const ONIX_PLUGINS_GIT = "https://github.com/ONDC-Official/automation-beckn-plugins"
-    // "https://github.com/ONDC-Official/automation-beckn-plugins";
+const ONIX_PLUGINS_GIT = "https://github.com/ONDC-Official/automation-beckn-plugins" 
 const BUILD_OUTPUT = path.resolve(__dirname, "../../../build-output");
 const RUNTIME_REDIS_ADDR_PLACEHOLDER = "__RUNTIME_REDIS_ADDR__";
 
@@ -76,7 +75,7 @@ async function generateSchemas(
     );
 
     try {
-        execSync(`bash ${scriptPath} "${buildPath}" "${outputPath}"`, {
+        execSync(`bash "${scriptPath}" "${buildPath}" "${outputPath}"`, {
             cwd: process.cwd(),
             stdio: "inherit",
             shell: "/bin/bash",
@@ -175,7 +174,7 @@ async function generateL1Validations(buildPath: string) {
     );
 
     try {
-        execSync(`bash ${scriptPath} "${buildPath}" "${outputPath}"`, {
+        execSync(`bash "${scriptPath}" "${buildPath}" "${outputPath}"`, {
             cwd: process.cwd(),
             stdio: "inherit",
             shell: "/bin/bash",
